@@ -40,7 +40,8 @@ class KnapsackSolver {
         else if (products[n - 1].weight > W) {
             return knapsackRecursive(n - 1, W, new Backpack(canditates));
         } else {
-            if (knapsackRecursive(n - 1, W, new Backpack(canditates)).currentCost > knapsackRecursive(n - 1, W - products[n - 1].weight, canditates.with(products[n - 1])).currentCost) {
+            if (knapsackRecursive(n - 1, W, new Backpack(canditates)).currentCost >
+                    knapsackRecursive(n - 1, W - products[n - 1].weight, canditates.with(products[n - 1])).currentCost) {
                 return knapsackRecursive(n - 1, W, new Backpack(canditates));
             } else {
                 return knapsackRecursive(n - 1, W - products[n - 1].weight, canditates.with(products[n - 1]));
